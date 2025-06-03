@@ -1,13 +1,21 @@
-require('dotenv').config(); // This must remain the first line
+require('dotenv').config({ path: './.env' }); 
+
+console.log('Attempting to connect with MONGO_URI:', process.env.MONGO_URI);
+
 const express = require('express');
 const connectDB = require('./config/db');
+const cors = require('cors');
+const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 
-// Connect Database
 connectDB();
 
-// Basic route for testing
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/products', productRoutes);
+
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
