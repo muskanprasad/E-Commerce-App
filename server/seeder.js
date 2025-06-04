@@ -1,10 +1,9 @@
-// server/seeder.js
-require('dotenv').config(); // Load environment variables
+require('dotenv').config(); 
 const mongoose = require('mongoose');
-const Product = require('./models/Product'); // Your Product model
-const connectDB = require('./config/db'); // Your DB connection function
+const Product = require('./models/Product'); 
+const connectDB = require('./config/db'); 
 
-// Connect to DB (using the function from db.js)
+
 connectDB();
 
 const products = [

@@ -4,7 +4,7 @@ console.log('Attempting to connect with MONGO_URI:', process.env.MONGO_URI);
 
 const express = require('express');
 const connectDB = require('./config/db');
-const cors = require('cors');
+const cors = require('cors');//smooth rendering of frontend using backend 
 const productRoutes = require('./routes/productRoutes');
 
 const app = express();
